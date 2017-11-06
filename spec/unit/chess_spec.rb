@@ -1,25 +1,28 @@
-require_relative '../support/dependency_helper'
+require_relative '../../lib/chess'
+require_relative '../../lib/board'
+require_relative '../../lib/piece'
+require_relative '../../lib/player'
 
 RSpec.describe Chess do
 
   describe '#initialize' do
-    init_board =
+    # Variables
+    let(:init_board) { Board.new }
+    let(:c) { Chess.new }
 
     it 'should create a board' do
-      c = Chess.new
-
-
+      expect(c.board.class).to eq(init_board.class)
     end
 
 
 
 
-    it 'should set the active_player to white'
-    it 'should have white and black player objects'
+    # it 'should set the active_player to white'
+    # it 'should have white and black player objects'
 
-    it 'should be active' do
-      pending 'not sure if it needs to be active'
-      expect(true).to eq(false)
-    end
+    #it 'should be active' do
+    #  pending 'not sure if it needs to be active'
+    #  expect(true).to eq(false)
+    #end
   end
 end

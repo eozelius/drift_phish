@@ -1,8 +1,7 @@
-require_relative 'support/dependency_helper'
 
 # Chess Piece
 class Piece
-  attr_reader :type, :location, :color, :possible_moves, :best_move
+  attr_reader :type, :location, :color
 
   def initialize(type = 'pawn', location = [0,0], color = 'white')
     @type = type

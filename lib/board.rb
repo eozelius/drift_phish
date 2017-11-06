@@ -1,5 +1,3 @@
-require_relative '../lib/support/dependency_helper'
-
 # Board Class
 class Board
   attr_reader :board

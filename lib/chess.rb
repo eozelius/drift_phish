@@ -1,5 +1,3 @@
-require_relative 'support/dependency_helper'
-
 # Chess Class
 class Chess
   attr_accessor :board, :white_player, :black_player
