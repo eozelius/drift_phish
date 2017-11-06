@@ -1,6 +1,6 @@
 # Chess Piece
 class Piece
-  attr_reader :type, :location
+  attr_reader :type, :location, :possible_moves, :best_move
 
   def initialize(type = 'pawn', location = [0,0])
     @type = type
