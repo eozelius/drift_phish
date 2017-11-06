@@ -7,7 +7,6 @@ RSpec.describe Chess do
     it 'should set the active_player to white'
     it 'should have white and black player objects'
 
-
     it 'should be active' do
       pending 'not sure if it needs to be active'
       expect(true).to eq(false)
