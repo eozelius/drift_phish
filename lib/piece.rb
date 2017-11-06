@@ -1,10 +1,13 @@
+require_relative 'support/dependency_helper'
+
 # Chess Piece
 class Piece
-  attr_reader :type, :location, :possible_moves, :best_move
+  attr_reader :type, :location, :color, :possible_moves, :best_move
 
-  def initialize(type = 'pawn', location = [0,0])
+  def initialize(type = 'pawn', location = [0,0], color = 'white')
     @type = type
     @location = location
+    @color = color
   end
 
   def possible_moves

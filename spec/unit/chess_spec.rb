@@ -3,7 +3,17 @@ require_relative '../support/dependency_helper'
 RSpec.describe Chess do
 
   describe '#initialize' do
-    it 'should create a board'
+    init_board =
+
+    it 'should create a board' do
+      c = Chess.new
+
+
+    end
+
+
+
+
     it 'should set the active_player to white'
     it 'should have white and black player objects'
 
