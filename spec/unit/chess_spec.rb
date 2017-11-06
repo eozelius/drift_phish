@@ -11,7 +11,7 @@ RSpec.describe Chess do
     let(:c) { Chess.new }
 
     it 'should create a board' do
-      expect(c.board.class).to eq(init_board.class)
+      expect(c.board.board).to eq(init_board)
     end
 
 
