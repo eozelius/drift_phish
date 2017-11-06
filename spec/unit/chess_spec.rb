@@ -46,6 +46,15 @@ RSpec.describe Chess do
       expect(bishop.color).to eq('black')
     end
 
+    it 'should have empty (0) squares between black & white' do
+      empty_squares = [ c.board[5][6], c.board[2][2], c.board[3][5]]
+
+      empty_squares.each do |e|
+        expect(e).to eq(0)
+
+      end
+    end
+
     # it 'should set the active_player to white'
     # it 'should have white and black player objects'
 
