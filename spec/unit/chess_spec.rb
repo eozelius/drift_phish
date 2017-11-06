@@ -1,5 +1,4 @@
 require_relative '../../lib/chess'
-require_relative '../../lib/board'
 require_relative '../../lib/piece'
 require_relative '../../lib/player'
 
@@ -7,15 +6,12 @@ RSpec.describe Chess do
 
   describe '#initialize' do
     # Variables
-    let(:init_board) { Board.new }
     let(:c) { Chess.new }
 
     it 'should create a board' do
-      expect(c.board.board).to eq(init_board)
+      expect(c.board[0][0].class).to eq(Piece)
+      expect(c.board[4][4]).to eq(0)
     end
-
-
-
 
     # it 'should set the active_player to white'
     # it 'should have white and black player objects'
