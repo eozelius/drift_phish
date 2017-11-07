@@ -3,11 +3,10 @@ require_relative '../../lib/piece'
 require_relative '../../lib/player'
 
 RSpec.describe Chess do
+  # Variables
+  let(:c) { Chess.new }
 
   describe '#initialize' do
-    # Variables
-    let(:c) { Chess.new }
-
     it 'should create a board' do
       expect(c).to respond_to(:board)
     end
@@ -48,10 +47,7 @@ RSpec.describe Chess do
 
     it 'should have empty (0) squares between black & white' do
       empty_squares = [ c.board[5][6], c.board[2][2], c.board[3][5]]
-
-      empty_squares.each do |e|
-        expect(e).to eq(0)
-      end
+      empty_squares.each { |e| expect(e).to eq(nil) }
     end
 
     it 'should set the active_player to white' do
@@ -61,13 +57,6 @@ RSpec.describe Chess do
 
     it 'should be active if the game is playable' do
       expect(c.active).to eq(true)
-    end
-  end
-
-  describe '#checkmate?' do
-    it 'is true when king cannot move' do
-      pending 'needs to be implemented'
-      expect(1).to eq(0)
     end
   end
 end

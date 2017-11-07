@@ -27,10 +27,12 @@ class Chess
   end
 
   private
+
   def start_game
   end
 
   def checkmate?
+
   end
 
   def reset_board
@@ -74,10 +76,10 @@ class Chess
 
     [ [a_8, b_8, c_8, d_8, e_8, f_8, g_8, h_8],
       [a_7, b_7, c_7, d_7, e_7, f_7, g_7, h_7],
-      [0, 0, 0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0, 0, 0],
+      [nil, nil, nil, nil, nil, nil, nil, nil],
+      [nil, nil, nil, nil, nil, nil, nil, nil],
+      [nil, nil, nil, nil, nil, nil, nil, nil],
+      [nil, nil, nil, nil, nil, nil, nil, nil],
       [a_2, b_2, c_2, d_2, e_2, f_2, g_2, h_2],
       [a_1, b_1, c_1, d_1, e_1, f_1, g_1, h_1] ]
   end
