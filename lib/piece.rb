@@ -1,11 +1,10 @@
 
 # Chess Piece
 class Piece
-  attr_reader :type, :location, :color, :possible_moves
+  attr_reader :type, :color, :possible_moves
 
-  def initialize(type = 'pawn', location = [0,0], color = 'white')
+  def initialize(type = 'pawn', color = 'white')
     @type = type
-    @location = location
     @color = color
     @possible_moves = assign_abilities(type)
   end

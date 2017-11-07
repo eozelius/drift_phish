@@ -6,7 +6,12 @@ class Player
     @color = color
   end
 
-  def make_move
+  def make_move(board)
+    { new: [5, 3], old: [6, 3] }
+  end
 
+  def checkmated?
+    gets
+    false
   end
 end
