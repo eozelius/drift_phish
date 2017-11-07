@@ -59,12 +59,15 @@ RSpec.describe Chess do
       expect(turn).to eq('white')
     end
 
+    it 'should be active if the game is playable' do
+      expect(c.active).to eq(true)
+    end
+  end
 
-    # it 'should have white and black player objects'
-
-    #it 'should be active' do
-    #  pending 'not sure if it needs to be active'
-    #  expect(true).to eq(false)
-    #end
+  describe '#checkmate?' do
+    it 'is true when king cannot move' do
+      pending 'needs to be implemented'
+      expect(1).to eq(0)
+    end
   end
 end
