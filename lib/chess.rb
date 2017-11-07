@@ -1,12 +1,13 @@
 # Chess Class
 class Chess
-  attr_accessor :board, :white_player, :black_player
+  attr_accessor :board, :white_player, :black_player, :active_player
   attr_reader :active
 
   def initialize
     @board = reset_board
     @white_player = Player.new('white')
     @black_player = Player.new('black')
+    @active_player = @white_player
     @active = true
   end
 

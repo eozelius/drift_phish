@@ -51,11 +51,15 @@ RSpec.describe Chess do
 
       empty_squares.each do |e|
         expect(e).to eq(0)
-
       end
     end
 
-    # it 'should set the active_player to white'
+    it 'should set the active_player to white' do
+      turn = c.active_player.color
+      expect(turn).to eq('white')
+    end
+
+
     # it 'should have white and black player objects'
 
     #it 'should be active' do
