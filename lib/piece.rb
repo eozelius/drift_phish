@@ -31,15 +31,14 @@ class Piece
 
     case type
       when 'king'
-        directions.values.each do |d|
-          abilities.push(d)
-        end
+        directions.values.each { |d| abilities.push(d) }
       when 'queen'
-        directions.values.each do |d|
-          abilities.push(d)
-        end
+        directions.values.each { |d| abilities.push(d) }
       when 'rook'
-        abilities.push(directions[:north], directions[:east], directions[:south], directions[:west])
+        abilities.push( directions[:north],
+                        directions[:east],
+                        directions[:south],
+                        directions[:west] )
       when 'knight'
         abilities.push(
           [-2,-1],
@@ -52,7 +51,10 @@ class Piece
           [-1,-2]
         )
       when 'bishop'
-        abilities.push(directions[:north_east], directions[:south_east], directions[:south_west], directions[:north_west])
+        abilities.push( directions[:north_east],
+                        directions[:south_east],
+                        directions[:south_west],
+                        directions[:north_west] )
       else
         abilities.push(directions[:north])
     end
