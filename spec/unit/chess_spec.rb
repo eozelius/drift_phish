@@ -57,8 +57,4 @@ RSpec.describe Chess do
       expect(turn).to eq('white')
     end
   end
-
-  describe 'gameplay' do
-
-  end
 end

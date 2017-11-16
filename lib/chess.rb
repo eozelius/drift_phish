@@ -7,8 +7,6 @@ class Chess
     @white_player = Player.new('white')
     @black_player = Player.new('black')
     @active_player = @white_player
-    p ' ########## Begin new Game ########## '
-    start_game
   end
 
   def print_board
@@ -24,12 +22,15 @@ class Chess
       end
       print "\n" if r < 7
     end
-    print "\n   A  B  C  D  E  F  G  H \n"
+    print "\n     A       B       C       D       E       F       G       H \n"
   end
 
   private
 
   def start_game
+    p ' ########## Begin new Game ########## '
+
+=begin
     while game_active?
       move = @active_player.make_move(@board)
 
@@ -58,6 +59,7 @@ class Chess
       toggle_active_player
 
     end
+=end
   end
 
   def move_piece(move)

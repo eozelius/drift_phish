@@ -1,12 +1,23 @@
 require_relative '../../lib/piece'
 
 RSpec.describe Piece do
-  let(:pawn) { Piece.new('pawn', [6, 0], 'white') }
-  let(:rook) { Piece.new('rook', [0, 0], 'black') }
-  let(:bishop) { Piece.new('bishop', [0, 5], 'black') }
-  let(:knight) { Piece.new('knight', [6, 6], 'white') }
-  let(:queen)  { Piece.new('queen',  [7, 3], 'white') }
-  let(:king)   { Piece.new('king',   [0, 4], 'black') }
+  let(:pawn) { Piece.new('pawn', 'white') }
+  let(:rook) { Piece.new('rook', 'black') }
+  let(:bishop) { Piece.new('bishop', 'black') }
+  let(:knight) { Piece.new('knight', 'white') }
+  let(:queen)  { Piece.new('queen',  'white') }
+  let(:king)   { Piece.new('king',   'black') }
+
+  directions = {
+    north:      [-1, 0],
+    north_east: [-1, 1],
+    east:       [0,  1],
+    south_east: [1,  1],
+    south:      [1,  0],
+    south_west: [1, -1],
+    west:       [0, -1],
+    north_west: [-1,-1],
+  }
 
   describe 'pawn' do
     it 'can move forward one square' do
@@ -16,13 +27,13 @@ RSpec.describe Piece do
 
   describe 'rook' do
     it 'can move in a straight line (forward/backward side/side)' do
-      expect(rook.possible_moves).to contain_exactly([-1, 0], [0, 1], [1, 0], [0, -1])
+      expect(rook.possible_moves).to contain_exactly(directions[:north], directions[:east], directions[:south], directions[:west])
     end
   end
 
   describe 'bishop' do
     it 'can move in any diagonal direction' do
-      expect(bishop.possible_moves).to contain_exactly([-1, -1], [-1, 1], [1, 1], [1, -1])
+      expect(bishop.possible_moves).to contain_exactly(directions[:north_east], directions[:south_east], directions[:south_west], directions[:north_west])
     end
   end
 
@@ -34,13 +45,15 @@ RSpec.describe Piece do
 
   describe 'queen' do
     it 'can move any direction' do
-      expect(queen.possible_moves).to contain_exactly([-1, 0], [-1, 1], [0,  1], [1,  1], [1,  0], [1, -1], [0, -1], [-1,-1])
+      expect(queen.possible_moves).to contain_exactly(directions[:north], directions[:east], directions[:south], directions[:west],
+                                                      directions[:north_east], directions[:south_east], directions[:south_west], directions[:north_west] )
     end
   end
 
   describe 'king' do
     it 'can move any direction' do
-      expect(king.possible_moves).to contain_exactly([-1, 0], [-1, 1], [0,  1], [1,  1], [1,  0], [1, -1], [0, -1], [-1,-1])
+      expect(queen.possible_moves).to contain_exactly(directions[:north], directions[:east], directions[:south], directions[:west],
+                                                      directions[:north_east], directions[:south_east], directions[:south_west], directions[:north_west] )
     end
   end
 end

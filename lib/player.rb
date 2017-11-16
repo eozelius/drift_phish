@@ -11,7 +11,6 @@ class Player
   end
 
   def checkmated?
-    gets
     false
   end
 end
