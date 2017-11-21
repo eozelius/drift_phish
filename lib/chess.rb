@@ -14,7 +14,6 @@ class Chess
 
   def print_board
     return false if ENV['RACK_ENV'] == 'test'
-
     print "\n\n"
     (0..7).each do |r|
       print "#{8 - r - 1} "
