@@ -7,12 +7,14 @@ class Chess
     @white_player = Player.new('white')
     @black_player = Player.new('black')
     @active_player = @white_player
-    p " ############### Begin Game ############### "
+    p " ############### Begin Game ############### " unless ENV['RACK_ENV'] == 'test'
     print_board
     start_game
   end
 
   def print_board
+    return false if ENV['RACK_ENV'] == 'test'
+
     print "\n\n"
     (0..7).each do |r|
       print "#{8 - r - 1} "
