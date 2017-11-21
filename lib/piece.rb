@@ -9,10 +9,6 @@ class Piece
     @possible_moves = assign_abilities(type)
   end
 
-  def best_move
-    [4,4]
-  end
-
   private
 
   def assign_abilities(type = 'pawn')

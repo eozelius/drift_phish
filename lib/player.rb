@@ -6,11 +6,10 @@ class Player
     @color = color
   end
 
-  def make_move(board)
-    { new: [5, 3], old: [6, 3] }
-  end
+  def move(game_state)
+    # raise ArgumentError, 'game_state is not correctly formatted' if game_state.nil?
 
-  def checkmated?
-    false
+    { old: [6, 4],
+      new: [4, 4] }
   end
 end

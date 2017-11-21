@@ -7,6 +7,7 @@ class Chess
     @white_player = Player.new('white')
     @black_player = Player.new('black')
     @active_player = @white_player
+    start_game
   end
 
   def print_board
@@ -28,41 +29,13 @@ class Chess
   private
 
   def start_game
-    p ' ########## Begin new Game ########## '
-
-=begin
-    while game_active?
-      move = @active_player.make_move(@board)
-
-      old_row = move[:old][0]
-      old_col = move[:old][1]
-
-      piece_to_move = @board[old_row][old_col]
-      p "piece to move: #{@board[old_row][old_col]}"
-
-      new_row = move[:new][0]
-      new_col = move[:new][1]
-
-      p "old_row: #{old_row}"
-      p "old_col: #{old_col}"
-
-      p "piece: #{piece_to_move}"
-
-      p "new_row: #{new_row}"
-      p "new_col: #{new_col}"
-
-
-      @board[new_row][new_col] = piece_to_move
-      @board[old_row][old_col] = nil
-      print_board
-
-      toggle_active_player
-
-    end
-=end
+    print "\n ############### Begin Game ############### \n\n"
+    move = @active_player.move(@board)
+    move_piece(move)
   end
 
   def move_piece(move)
+    p "move => #{move}"
   end
 
   def toggle_active_player
