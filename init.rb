@@ -3,4 +3,3 @@ require_relative 'lib/piece'
 require_relative 'lib/player'
 
 g = Chess.new
-g.print_board

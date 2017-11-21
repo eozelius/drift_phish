@@ -9,7 +9,7 @@ class Player
   def move(game_state)
     # raise ArgumentError, 'game_state is not correctly formatted' if game_state.nil?
 
-    { old: [6, 4],
-      new: [4, 4] }
+    { :prev => [6, 4],
+      :goto => [4, 4] }
   end
 end

@@ -7,10 +7,13 @@ class Chess
     @white_player = Player.new('white')
     @black_player = Player.new('black')
     @active_player = @white_player
+    p " ############### Begin Game ############### "
+    print_board
     start_game
   end
 
   def print_board
+    print "\n\n"
     (0..7).each do |r|
       print "#{8 - r - 1} "
       (0..7).each do |c|
@@ -18,7 +21,7 @@ class Chess
           print "[______]"
         else
           color = @board[r][c].color == 'white' ? 'W' : 'B'
-          print "[#{color}-#{@board[r][c].type[0]}#{@board[r][c].type[1]}#{@board[r][c].type[2]}#{@board[r][c].type[3]}]"
+          print "[#{color}_#{@board[r][c].type[0]}#{@board[r][c].type[1]}#{@board[r][c].type[2]}#{@board[r][c].type[3]}]"
         end
       end
       print "\n" if r < 7
@@ -29,13 +32,20 @@ class Chess
   private
 
   def start_game
-    print "\n ############### Begin Game ############### \n\n"
     move = @active_player.move(@board)
     move_piece(move)
+    print_board
   end
 
   def move_piece(move)
-    p "move => #{move}"
+    prev_r = move[:prev][0]
+    prev_c = move[:prev][1]
+    moving_piece = @board[prev_r][prev_c]
+    goto_r = move[:goto][0]
+    goto_c = move[:goto][1]
+
+    @board[goto_r][goto_c] = moving_piece
+    @board[prev_r][prev_c] = nil
   end
 
   def toggle_active_player

@@ -53,8 +53,8 @@ RSpec.describe Chess do
     end
 
     it 'should set the active_player to white' do
-      turn = c.active_player.color
-      expect(turn).to eq('white')
+      active_player = c.active_player.color
+      expect(active_player).to eq('white')
     end
   end
 end
